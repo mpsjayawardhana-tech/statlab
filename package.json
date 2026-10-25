@@ -1,0 +1,18 @@
+{
+  "name": "pcg-statlab-cloud",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PCG STATLAB — Vercel + MongoDB Atlas + Clerk private per-student study progress",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check public/app.js && node --check public/cloud-sync.js && node --check api/config.js && node --check api/progress.js",
+    "local:static": "python3 -m http.server 8000 --directory public"
+  },
+  "dependencies": {
+    "@clerk/backend": "^2.0.0",
+    "mongodb": "^6.0.0"
+  }
+}
