@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="description" content="PCG STATLAB — STAT 2112 beginner-first statistical inference lessons, interactive simulations, worked problems and exam practice. Created by theMadaa." />
+  <title>PCG STATLAB — Statistical Inference I</title>
+  <link rel="icon" href="assets/pcg-symbol.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <div id="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="identity"><img src="assets/pcg-symbol.png" alt="PCG logo" /><div><strong>PCG <span class="stencil">STATLAB</span></strong><small>STUDY OS <span class="pulse-dot"></span> V 1.0</small></div></div>
+      <div class="side-scroll">
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="main-nav" id="mainNav"></nav>
+        <div class="nav-label" style="margin-top:25px">YOUR COURSE <span id="courseProgressMini">0%</span></div>
+        <div class="mini-progress"><div id="miniProgressFill"></div></div>
+        <div class="module-nav" id="moduleNav"></div>
+      </div>
+      <div class="side-footer"><span>DESIGNED FOR FOCUS</span><div>Created by <b>theMadaa</b></div><div class="pcg-partner">A PCG team project</div></div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+    <div class="workspace">
+      <header class="topbar"><div class="top-left"><button class="icon-btn mobile-menu" id="menuBtn" title="Open navigation" aria-label="Open navigation">☰</button><div class="crumb">PCG / <span id="breadcrumb">Overview</span></div></div><div class="top-actions"><button id="searchBtn" class="search-trigger"><span>⌕</span> Search anything <kbd>⌘ K</kbd></button><button class="icon-btn" id="themeBtn" aria-label="Switch appearance" title="Switch appearance">◐</button><button class="icon-btn" id="focusBtn" aria-label="Focus mode" title="Focus mode">◱</button><button class="cloud-top-button" id="cloudBtn" type="button" title="Account and cloud save">☁ <span id="cloudTopLabel">Cloud save</span></button><span class="avatar">P</span></div></header>
+      <main id="mainContent" tabindex="-1" aria-live="polite"></main>
+      <footer class="page-footer"><span>PCG STATLAB · STAT 2112 · Wayamba University course materials</span><span>Created by <b>theMadaa</b> · Educational project, not an official university website</span></footer>
+    </div>
+  </div>
+  <div class="modal-shade" id="searchModal" aria-hidden="true"><div class="search-modal" role="dialog" aria-label="Search course"><div class="search-line"><span>⌕</span><input id="globalSearch" type="search" autocomplete="off" placeholder="Search topics, formulas, concepts…" /><button id="closeSearch" class="tiny-btn">ESC</button></div><div id="searchResults" class="search-results"></div><div class="search-hint">Click a result to open lesson · Search works offline</div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div id="cloudOverlay" class="cloud-overlay" aria-hidden="true">
+    <section class="cloud-dialog" role="dialog" aria-label="Cloud save and student account" aria-modal="true">
+      <div class="cloud-dialog-head"><div><small>PCG STATLAB / ACCOUNT</small><h2>Cloud save</h2></div><button id="cloudClose" class="cloud-close" type="button" aria-label="Close account dialog">✕</button></div>
+      <p class="cloud-sub">Your lessons and personal notes stay in this browser unless you sign in and enable sync.</p>
+      <p id="cloudStatus" class="cloud-status" role="status">Checking cloud availability…</p>
+      <div id="cloudUser" class="cloud-user"></div>
+      <div id="cloudSignIn"></div>
+      <div id="cloudChoices" class="cloud-choices"></div>
+      <div class="cloud-foot">Your MongoDB connection is server-only. Never put database passwords in GitHub or frontend files.</div>
+    </section>
+  </div>
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+  <script src="cloud-sync.js"></script>
+</body>
+</html>
